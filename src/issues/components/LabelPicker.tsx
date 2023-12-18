@@ -1,6 +1,3 @@
-import { useQuery } from '@tanstack/react-query';
-import { githubApi } from '../../api/githubApi';
-import { Label } from '../../interfaces/label';
 import { useLabels } from '../../hooks/useLabels';
 import { LoadingIcon } from '../../shared/components/LoadingIcon';
 
