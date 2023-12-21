@@ -4,7 +4,7 @@ import { sleep } from '../../helpers.tsx/sleep';
 import { Label } from '../../interfaces';
 
 const getLabels = async (): Promise<Label[]> => {
-  const { data } = await githubApi.get<Label[]>('/labels');
+  const { data } = await githubApi.get<Label[]>('/labels?per_page=100');
   await sleep(3);
   return data;
 };
