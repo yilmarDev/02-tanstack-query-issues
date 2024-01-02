@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IssueList } from '../components/IssueList';
 import { LabelPicker } from '../components/LabelPicker';
 import { useIssues } from '../hooks/useIssues';
@@ -33,11 +33,19 @@ export const ListView = () => {
         )}
 
         <div className="d-flex mt-2 justify-content-between align-items-center">
-          <button className="btn btn-outline-primary" onClick={prevPage}>
+          <button
+            className="btn btn-outline-primary"
+            onClick={prevPage}
+            disabled={issuesQuery.isFetching}
+          >
             Prev
           </button>
           <span>{page}</span>
-          <button className="btn btn-outline-primary" onClick={nextPage}>
+          <button
+            className="btn btn-outline-primary"
+            onClick={nextPage}
+            disabled={issuesQuery.isFetching}
+          >
             Next
           </button>
         </div>
